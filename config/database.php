@@ -7,25 +7,41 @@ $LOCAL_PASSWORD = 'unicesmag';
 $LOCAL_PORT     = '5432';
 
 //Supabase configuration
-$SUPA_HOST      = '';
-$SUPA_DBNAME    = '';
-$SUPA_USERNAME  = '';
-$SUPA_PASSWORD  = '';
-$SUPA_PORT      = '';
+$SUPA_HOST      = 'aws-1-us-east-2.pooler.supabase.com';
+$SUPA_DBNAME    = 'postgres';
+$SUPA_USERNAME  = 'postgres.bxklwwswypfbhcyddcmd';
+$SUPA_PASSWORD  = '1080691526Pr';
+$SUPA_PORT      = '6543';
 
-$data_connection = "
+$local_data_connection = "
   host=$LOCAL_HOST 
   dbname=$LOCAL_DBNAME
   user=$LOCAL_USERNAME
   password=$LOCAL_PASSWORD
   port=$LOCAL_PORT
 ";
+$supa_data_connection = "
+  host=$SUPA_HOST 
+  dbname=$SUPA_DBNAME
+  user=$SUPA_USERNAME
+  password=$SUPA_PASSWORD
+  port=$SUPA_PORT
+";
 
-$conn = pg_connect($data_connection);
-if(!$conn){
-    echo "Error: Unable to connect tod database.";
+//LOCAL CONNECTION
+$local_conn = pg_connect($local_data_connection);
+if(!$local_conn){
+    echo "Error: Unable to connect to local database.";
     exit();
 }else{
-    echo "Success connection !!!";
+    echo "Local Success connection !!!";
+}
+//SUPABASE CONNECTION
+$supa_conn = pg_connect($supa_data_connection);
+if(!$supa_conn){
+    echo "Error: Unable to connect to Supabase database.";
+    exit();
+}else{
+    echo "<br>Supabase Success connection !!!";
 }
 ?>
