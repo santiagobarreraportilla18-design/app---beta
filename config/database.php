@@ -37,6 +37,7 @@ if(!$local_conn){
     echo "Local Success connection !!!";
 }
 //SUPABASE CONNECTION
+/*
 $supa_conn = pg_connect($supa_data_connection);
 if(!$supa_conn){
     echo "Error: Unable to connect to Supabase database.";
@@ -44,4 +45,5 @@ if(!$supa_conn){
 }else{
     echo "<br>Supabase Success connection !!!";
 }
+    */
 ?>
