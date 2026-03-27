@@ -16,7 +16,7 @@ if (pg_num_rows($res_email) > 0) {
     exit();
 
 
-$res_local = pg_query($local_conn, $sql); 
+$res_local = pg_query($local_conn, $sql); }
 
   //Query to insert into SQL.
 $sql = "INSERT INTO users (firstname,lastname,email,mobile_phone,password) 
