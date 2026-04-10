@@ -9,4 +9,5 @@ CREATE TABLE users (id SERIAL PRIMARY KEY,
                    status BOOLEAN NOT NULL DEFAULT TRUE, 
                    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), 
                    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), 
-                   deleted_at TIMESTAMPTZ);
+                   deleted_at TIMESTAMPTZ)
+;
